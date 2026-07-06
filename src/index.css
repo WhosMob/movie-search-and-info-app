@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #0a0a0a;
+  --color-dark-card: #111111;
+  --color-dark-border: #1a1a1a;
+  --color-dark-hover: #1f1f1f;
+  --color-accent: #c8ff00;
+  --color-accent-dim: rgba(200, 255, 0, 0.1);
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #888888;
+  --color-text-muted: #555555;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f5f5f5;
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.1;
+}
+
+a { color: inherit; text-decoration: none; }
+
+::selection {
+  background: #c8ff00;
+  color: #0a0a0a;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* ===== GLASS ===== */
+.glass {
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(17, 17, 17, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== SECTION MARKER ===== */
+.section-marker {
+  font-family: var(--font-mono, 'Space Grotesk');
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+  font-weight: 500;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-left { animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 25s linear infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, #111 25%, #1a1a1a 50%, #111 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(200, 255, 0, 0.1); }
+  50% { border-color: rgba(200, 255, 0, 0.3); }
+}
+.animate-border-glow { animation: borderGlow 3s ease-in-out infinite; }
+
+/* ===== HOVER EFFECTS ===== */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hover-glow {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(200, 255, 0, 0.15);
+  border-color: rgba(200, 255, 0, 0.2) !important;
+}
+
+.hover-scale {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-line {
+  position: relative;
+  display: inline-block;
+}
+.hover-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #c8ff00;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-line:hover::after {
+  width: 100%;
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #f5f5f5 0%, #888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #c8ff00 0%, #88cc00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== MARQUEE BANNER ===== */
+.marquee-banner {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 12px 0;
+  background: #0d0d0d;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+}
+
+/* ===== NAV ACTIVE ===== */
+.nav-active {
+  background-color: #c8ff00;
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+/* ===== FAV ACTIVE ===== */
+.fav-active {
+  background-color: #c8ff00;
+  color: #0a0a0a;
+  border-color: #c8ff00;
+}
+
+.fav-inactive {
+  background-color: rgba(17, 17, 17, 0.8);
+  color: #555;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.fav-inactive:hover {
+  color: #c8ff00;
+  border-color: rgba(200, 255, 0, 0.3);
+}
+
+/* ===== NUMBER MARKER ===== */
+.number-marker {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: #c8ff00;
+  letter-spacing: 0.05em;
+}
