@@ -10,7 +10,7 @@ function NotFound() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h1 className="text-[120px] md:text-[180px] text-text-primary leading-none select-none font-bold">
+        <h1 className="text-[80px] sm:text-[100px] md:text-[120px] lg:text-[180px] text-text-primary leading-none select-none font-bold">
           404
         </h1>
       </motion.div>
@@ -51,7 +51,7 @@ function NotFound() {
         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-dark text-sm font-semibold rounded-full hover:bg-accent/90 transition-colors group"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-dark text-sm font-semibold rounded-full hover:bg-accent/90 transition-colors group"
           >
             <Home className="w-4 h-4" />
             <span>Back to Home</span>
@@ -62,7 +62,7 @@ function NotFound() {
         <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
           <Link
             to="/search"
-            className="inline-flex items-center gap-2 px-8 py-4 border border-dark-border text-text-primary text-sm font-medium rounded-full hover:border-text-muted transition-colors"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border border-dark-border text-text-primary text-sm font-medium rounded-full hover:border-text-muted transition-colors"
           >
             <Search className="w-4 h-4" />
             <span>Search Movies</span>

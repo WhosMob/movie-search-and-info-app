@@ -21,9 +21,9 @@ function Favorites() {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-24">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-20 sm:py-24">
       <motion.div
-        className="flex items-end justify-between mb-12"
+        className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-0 mb-8 sm:mb-12"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -33,7 +33,7 @@ function Favorites() {
             <div className="w-1.5 h-1.5 bg-accent rounded-full" />
             <span className="section-marker">Collection</span>
           </div>
-          <h1 className="text-4xl md:text-5xl text-text-primary font-semibold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-text-primary font-semibold">
             My Favorites
           </h1>
           <p className="text-text-muted text-sm mt-3">

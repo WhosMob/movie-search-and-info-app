@@ -46,7 +46,7 @@ function SearchResults() {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-24">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-20 sm:py-24">
       <motion.div
         className="mb-12"
         initial={{ opacity: 0, y: -12 }}
@@ -81,7 +81,7 @@ function SearchResults() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6 sm:mb-8">
             <p className="text-text-secondary text-sm">
               {totalResults > 0 ? (
                 <>
@@ -94,7 +94,7 @@ function SearchResults() {
                 </>
               )}
             </p>
-            <div className="h-px flex-1 bg-dark-border" />
+            <div className="hidden sm:block h-px flex-1 bg-dark-border" />
           </div>
 
           {movies.length > 0 ? (

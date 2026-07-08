@@ -57,7 +57,7 @@ function Home() {
 
   if (error) {
     return (
-      <div className="max-w-[1200px] mx-auto px-6 py-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12">
         <ErrorMessage message={error} />
       </div>
     )
@@ -73,7 +73,7 @@ function Home() {
 
       <MarqueeBanner />
 
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         {loading ? (
           <section className="py-12">
             <div className="h-8 w-56 bg-dark-hover rounded mb-8 animate-shimmer" />

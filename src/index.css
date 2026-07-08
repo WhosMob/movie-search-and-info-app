@@ -246,3 +246,14 @@ a { color: inherit; text-decoration: none; }
   color: #c8ff00;
   letter-spacing: 0.05em;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .marquee-banner {
+    padding: 8px 0;
+  }
+
+  .marquee-content {
+    font-size: 11px;
+  }
+}

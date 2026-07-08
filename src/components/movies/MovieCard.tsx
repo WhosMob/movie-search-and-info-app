@@ -117,7 +117,7 @@ function MovieCard({ movie, index = 0 }: MovieCardProps) {
           </div>
         </div>
 
-        <div className="p-4">
+        <div className="p-3 sm:p-4">
           <h3 className="text-sm font-medium text-text-primary truncate mb-1 group-hover:text-accent transition-colors duration-300">
             {movie.title}
           </h3>

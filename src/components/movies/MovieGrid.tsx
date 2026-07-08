@@ -11,7 +11,7 @@ function MovieGrid({ title, movies }: MovieGridProps) {
   if (!movies || movies.length === 0) return null
 
   return (
-    <section className="py-12">
+    <section className="py-8 sm:py-12">
       {title && (
         <div className="mb-10">
           <motion.div

@@ -54,7 +54,7 @@ function MovieHero({ movie }: MovieHeroProps) {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 max-w-300 mx-auto px-6 min-h-[90vh] flex flex-col justify-end pb-24 pt-40"
+        className="relative z-10 max-w-300 mx-auto px-4 sm:px-6 min-h-[90vh] flex flex-col justify-end pb-16 sm:pb-24 pt-32 sm:pt-40"
         style={{ opacity }}
       >
         <div className="max-w-3xl">
@@ -72,7 +72,7 @@ function MovieHero({ movie }: MovieHeroProps) {
 
           {/* Title */}
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-text-primary leading-[0.95] mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-text-primary leading-[0.95] mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -109,7 +109,7 @@ function MovieHero({ movie }: MovieHeroProps) {
 
           {/* Overview */}
           <motion.p
-            className="text-text-secondary text-[15px] leading-relaxed mb-10 max-w-xl"
+            className="text-text-secondary text-sm sm:text-[15px] leading-relaxed mb-8 sm:mb-10 max-w-xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.25 }}
@@ -119,14 +119,14 @@ function MovieHero({ movie }: MovieHeroProps) {
 
           {/* Buttons */}
           <motion.div
-            className="flex flex-wrap items-center gap-4 mb-10"
+            className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
           >
             <motion.button
               onClick={() => navigate(`/movie/${movie.id}`)}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-dark text-sm font-semibold rounded-full hover:bg-accent/90 transition-all duration-300 group"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-accent text-dark text-sm font-semibold rounded-full hover:bg-accent/90 transition-all duration-300 group"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -135,7 +135,7 @@ function MovieHero({ movie }: MovieHeroProps) {
             </motion.button>
 
             <motion.button
-              className="inline-flex items-center gap-3 px-8 py-4 border border-dark-border text-text-primary text-sm font-medium rounded-full hover:border-text-muted transition-all duration-300"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border border-dark-border text-text-primary text-sm font-medium rounded-full hover:border-text-muted transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

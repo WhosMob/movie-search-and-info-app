@@ -4,7 +4,7 @@ function MovieCardSkeleton() {
   return (
     <div className="rounded-xl overflow-hidden border border-dark-border bg-dark-card">
       <div className="aspect-[2/3] animate-shimmer" />
-      <div className="p-4 space-y-3 border-t border-dark-border">
+      <div className="p-3 sm:p-4 space-y-3 border-t border-dark-border">
         <div className="h-4 w-3/4 bg-dark-hover rounded" />
         <div className="flex justify-between">
           <div className="h-3 w-12 bg-dark-hover rounded" />

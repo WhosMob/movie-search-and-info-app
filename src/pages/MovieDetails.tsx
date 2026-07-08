@@ -49,7 +49,7 @@ function MovieDetails() {
 
   if (loading) return <Loader />
   if (error) return (
-    <div className="max-w-[1200px] mx-auto px-6 py-12">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12">
       <ErrorMessage message={error} />
     </div>
   )
@@ -82,11 +82,11 @@ function MovieDetails() {
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/30 z-10" />
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-6 -mt-32 relative z-20">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 -mt-32 relative z-20">
         {/* Back */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 mb-8 text-text-muted hover:text-text-primary transition-colors text-sm group"
+          className="inline-flex items-center gap-2 mb-6 sm:mb-8 text-text-muted hover:text-text-primary transition-colors text-sm group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           Back
@@ -95,7 +95,7 @@ function MovieDetails() {
         <div className="flex flex-col md:flex-row gap-10">
           {/* Poster */}
           <motion.div
-            className="flex-shrink-0 w-48 md:w-60"
+            className="flex-shrink-0 w-32 sm:w-44 md:w-60 mx-auto sm:mx-0"
             whileHover={{ y: -4 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
@@ -118,7 +118,7 @@ function MovieDetails() {
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-4 mb-4">
               <motion.h1
-                className="text-3xl md:text-5xl text-text-primary leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-text-primary leading-tight"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -192,7 +192,7 @@ function MovieDetails() {
             )}
 
             {/* Details grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-8">
               {movie.original_language && (
                 <div className="p-4 rounded-lg border border-dark-border bg-dark-card hover-glow">
                   <span className="section-marker flex items-center gap-1.5">
@@ -242,7 +242,7 @@ function MovieDetails() {
 
         {/* Cast */}
         {topCast.length > 0 && (
-          <section className="mt-16 mb-12">
+          <section className="mt-10 sm:mt-16 mb-8 sm:mb-12">
             <div className="flex items-center gap-4 mb-8">
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 bg-accent rounded-full" />
@@ -251,7 +251,7 @@ function MovieDetails() {
               <div className="hidden md:block h-px flex-1 bg-dark-border" />
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
               {topCast.map((actor, i) => (
                 <motion.div
                   key={actor.id}

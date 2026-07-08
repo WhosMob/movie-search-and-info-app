@@ -14,7 +14,7 @@ function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-dark relative">
       <Navbar />
-      <main className="flex-1 relative pt-20">
+      <main className="flex-1 relative pt-16 sm:pt-20">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}

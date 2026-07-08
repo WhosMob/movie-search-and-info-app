@@ -18,7 +18,7 @@ function ErrorMessage({ message, onRetry }: ErrorMessageProps) {
         <AlertCircle className="w-5 h-5 text-text-muted" />
       </div>
       <p className="text-text-primary font-semibold text-base mb-2">Something went wrong</p>
-      <p className="text-text-muted text-sm mb-8 text-center max-w-sm">{message}</p>
+      <p className="text-text-muted text-sm mb-8 text-center max-w-sm px-4">{message}</p>
       {onRetry && (
         <motion.button
           onClick={onRetry}
